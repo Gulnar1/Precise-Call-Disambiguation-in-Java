@@ -1,0 +1,6 @@
+Method, Contexts, Application?, Dirty?
+"<vasco.tests.CallGraphTestCase: void main(java.lang.String[])>", 1, 1, 0
+"<vasco.tests.CallGraphTestCase$A: void bar()>", 2, 1, 0
+"<vasco.tests.CallGraphTestCase$A: void <init>()>", 2, 1, 0
+"<vasco.tests.CallGraphTestCase$A: void foo()>", 2, 1, 0
+"<java.lang.Object: void <init>()>", 2, 0, 0

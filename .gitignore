@@ -1,0 +1,14 @@
+bin
+doc
+sootOutput
+*.class
+*.jar
+*~
+out
+/target/
+/bin2/
+\.settings/
+\.classpath
+\.project
+.idea
+*.iml

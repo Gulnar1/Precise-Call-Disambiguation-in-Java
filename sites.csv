@@ -1,0 +1,10 @@
+FcpaEdges, SparkEdges, Context, CallSite
+1, 1, 1, "specialinvoke $r4.<vasco.tests.CallGraphTestCase$A: void <init>()>()"
+1, 1, 1, "specialinvoke $r3.<vasco.tests.CallGraphTestCase$A: void <init>()>()"
+1, 1, 1, "virtualinvoke $r4.<vasco.tests.CallGraphTestCase$A: void bar()>()"
+1, 1, 1, "virtualinvoke $r3.<vasco.tests.CallGraphTestCase$A: void foo()>()"
+1, 1, 1, "virtualinvoke $r4.<vasco.tests.CallGraphTestCase$A: void foo()>()"
+1, 1, 8, "virtualinvoke r0.<vasco.tests.CallGraphTestCase$A: void bar()>()"
+1, 1, 4, "virtualinvoke r0.<vasco.tests.CallGraphTestCase$A: void bar()>()"
+1, 1, 2, "specialinvoke r0.<java.lang.Object: void <init>()>()"
+1, 1, 6, "specialinvoke r0.<java.lang.Object: void <init>()>()"

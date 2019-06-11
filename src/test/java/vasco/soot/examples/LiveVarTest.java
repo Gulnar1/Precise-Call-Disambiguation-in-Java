@@ -1,6 +1,7 @@
 package vasco.soot.examples;
 import java.util.Map;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ import soot.SceneTransformer;
 import soot.SootMethod;
 import soot.Transform;
 import soot.Unit;
+import soot.Value;
 import soot.toolkits.scalar.FlowSet;
 import vasco.DataFlowSolution;
 
@@ -21,7 +23,7 @@ public class LiveVarTest extends SceneTransformer{
 	protected void internalTransform(String arg0, @SuppressWarnings("rawtypes") Map arg1) {
 		analysis = new LiveVariableAnalysis();
 		analysis.doAnalysis();
-		DataFlowSolution<Unit,FlowSet<Local>> solution = analysis.getMeetOverValidPathsSolution();
+		DataFlowSolution<Unit,Set<Value>> solution = analysis.getMeetOverValidPathsSolution();
 		System.out.println("--------" + arg0 + "&" + arg1 + "-----------" );
 		System.out.println("---------------************************----------------------");
 		for (SootMethod sootMethod : analysis.getMethods()) {
@@ -36,13 +38,13 @@ public class LiveVarTest extends SceneTransformer{
 		}		
 	}
 	
-	private static String format(FlowSet<Local> value) {
+	private static String format(Set<Value> value) {
 		if (value == null) {
 			return "";
 		}
 		StringBuffer sb = new StringBuffer();
-		List<Local> list = value.toList();
-		for(Local entry : list ){
+		//List<Local> list = value.toList();
+		for(Value entry : value ){
 			sb.append(" ").append(entry).append(", ");
 		}
 		return sb.toString();

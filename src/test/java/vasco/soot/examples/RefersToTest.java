@@ -27,16 +27,16 @@ public class RefersToTest extends SceneTransformer{
 		analysis.doAnalysis();
 		DataFlowSolution<Unit,HashMap<Value, Set<RefType>>> solution = analysis.getMeetOverValidPathsSolution();
 		System.out.println("--------" + arg0 + "&" + arg1 + "-----------" );
-		System.out.println("---------------************************----------------------");
+		System.out.println("------------------------------------ANALYSIS METHODS--------------------------------");
 		for (SootMethod sootMethod : analysis.getMethods()) {
-			System.out.println(sootMethod);
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: " + sootMethod);
 			for (Unit unit : sootMethod.getActiveBody().getUnits()) {
-				System.out.println("---------------IN & OUT---------------------------");
+				System.out.print("-------------------------------IN & OUT :");
 				System.out.println(unit);
 				System.out.println("IN:  " + format(solution.getValueBefore(unit)));
 				System.out.println("OUT: " + format(solution.getValueAfter(unit)));
 			}
-			System.out.println("----------------------------------------------------------------");
+			System.out.println("----------------------END OF METHOD-----------------------------");
 		}		
 	}
 	

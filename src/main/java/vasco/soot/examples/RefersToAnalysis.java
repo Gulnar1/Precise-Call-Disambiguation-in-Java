@@ -99,7 +99,8 @@ public HashMap<Value, Set<RefType>> callExitFlowFunction(
 	HashMap<Value, Set<RefType>>  afterCallValue = topValue();
 	if (unit instanceof AssignStmt) {
 		Value lhsOp = ((AssignStmt) unit).getLeftOp();
-		Set<RefType> val = exitValue.get(RETURN_LOCAL);
+		//Set<RefType> val = exitValue.get(RETURN_LOCAL);
+		Set<RefType> val = new HashSet<RefType>();
 		if(val.isEmpty())
 		;
 		else{

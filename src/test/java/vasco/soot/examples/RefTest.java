@@ -1,4 +1,5 @@
 package vasco.soot.examples;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Set;
@@ -24,32 +25,38 @@ public class RefTest extends SceneTransformer{
 	protected void internalTransform(String arg0, @SuppressWarnings("rawtypes") Map arg1) {
 		analysis = new RefAnalysis();
 		analysis.doAnalysis();
-		DataFlowSolution<Unit,Set<Value>> solution = analysis.getMeetOverValidPathsSolution();
-		System.out.println("--------" + arg0 + "&" + arg1 + "-----------" );
-		System.out.println("---------------************************----------------------");
+		DataFlowSolution<Unit,Set<Map<Value, RefType>>> solution = analysis.getMeetOverValidPathsSolution();
+		System.out.println("--------" + arg0 + " & " + arg1 + "-----------" );
+		System.out.println("------------------------------------ANALYSIS METHODS--------------------------------");
 		for (SootMethod sootMethod : analysis.getMethods()) {
-			System.out.println(sootMethod);
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: " + sootMethod + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			for (Unit unit : sootMethod.getActiveBody().getUnits()) {
-				System.out.println("---------------IN & OUT---------------------------");
-				System.out.println(unit);
+				System.out.print("-------------------------IN & OUT :");
+				System.out.println(unit + "  ------------------------------");
 				System.out.println("IN:  " + format(solution.getValueBefore(unit)));
 				System.out.println("OUT: " + format(solution.getValueAfter(unit)));
 			}
-			System.out.println("----------------------------------------------------------------");
+			System.out.println("----------------------END OF METHOD-----------------------------");
 		}		
 	}
 	
-	private static String format(Set<Value> value) {
-		if (value == null) {
+	private static String format(Set<Map<Value, RefType>> s) {
+		if (s == null) {
 			return "";
 		}
 		StringBuffer sb = new StringBuffer();
-		//List<Local> list = value.toList();
-		for(Value entry : value ){
-			sb.append(" ").append(entry).append(", ");
+		for( Map<Value,RefType> hm : s){
+			sb.append("Refers-to Relation:");
+			for(Value val : hm.keySet()){
+				sb.append(" ").append(val).append("->");
+				RefType rf = hm.get(val);
+				sb.append(" ").append(rf).append(",");
+			}
+			sb.append("\n");
 		}
 		return sb.toString();
 	}
+	
 	public RefAnalysis getAnalysis() {
 		return analysis;
 	}
@@ -91,15 +98,15 @@ public class RefTest extends SceneTransformer{
 				"-main-class", mainClass,
 				"-f", "none", mainClass 
 		};
-		RefTest lv = new RefTest();
-		PackManager.v().getPack("wjtp").add(new Transform("wjtp.lv", lv));
+		RefTest rf = new RefTest();
+		PackManager.v().getPack("wjtp").add(new Transform("wjtp.rf", rf));
 		soot.Main.main(sootArgs);
 	}
 	
 	@Test
 	public void testRefAnalysis() {
 		// TODO: Compare output with an ideal (expected) output
-		RefTest.main(new String[]{"vasco.tests.LiveVarTestCase"});
+		RefTest.main(new String[]{"vasco.tests.A"});
 	}
 
 }

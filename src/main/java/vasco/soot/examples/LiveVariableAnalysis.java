@@ -1,37 +1,34 @@
 package vasco.soot.examples;
 
-import soot.IntType;
+import java.util.HashSet;
+import java.util.Set;
+
+import soot.EquivalentValue;
 import soot.Local;
 import soot.SootField;
+import soot.RefType;
 import soot.SootMethod;
 import soot.Unit;
+import soot.IntType;
 import soot.Value;
 import soot.ValueBox;
-//import soot.jimple.AddExpr;
 import soot.jimple.AssignStmt;
+import soot.jimple.DefinitionStmt;
 import soot.jimple.FieldRef;
 import soot.jimple.InstanceFieldRef;
-//import soot.jimple.BinopExpr;
-//import soot.jimple.CastExpr;
 import soot.jimple.InstanceInvokeExpr;
-//import soot.jimple.IntConstant;
-//import soot.jimple.Constant;
 import soot.jimple.InvokeExpr;
-//import soot.jimple.MulExpr;
-//import soot.jimple.NumericConstant;
+import soot.jimple.NewExpr;
 import soot.jimple.ReturnStmt;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
-//import soot.jimple.UnopExpr;
-//import soot.jimple.internal.AbstractNegExpr;
 import soot.jimple.internal.JimpleLocal;
 import soot.toolkits.scalar.*;
-import vasco.Context;
 import vasco.BackwardInterProceduralAnalysis;
+import vasco.Context;
 import vasco.ProgramRepresentation;
 import vasco.soot.DefaultJimpleRepresentation;
-public class LiveVariableAnalysis extends BackwardInterProceduralAnalysis<SootMethod, Unit, FlowSet<Local>>{
-	// An artificial local representing returned value of a procedure (used because a method can have multiple return statements).
+public class LiveVariableAnalysis extends BackwardInterProceduralAnalysis<SootMethod, Unit, Set<Value>>{
 	private static final Local RETURN_LOCAL = new JimpleLocal("@return", IntType.v());
 	
 	public LiveVariableAnalysis() {
@@ -39,128 +36,142 @@ public class LiveVariableAnalysis extends BackwardInterProceduralAnalysis<SootMe
 		verbose = true;
 	}
 	@Override
-	public FlowSet<Local> normalFlowFunction(
-			Context<SootMethod, Unit, FlowSet<Local>> context, Unit node,
-			FlowSet<Local> outValue) {
-		FlowSet<Local> inValue = new ArraySparseSet<Local>();
-		outValue.copy(inValue);
+	public Set<Value> normalFlowFunction(
+			Context<SootMethod, Unit, Set<Value>> context, Unit node,
+			Set<Value> outValue) {
+		Set<Value>  inValue = new HashSet<Value>();
+		inValue.addAll(outValue);
 		if (node instanceof AssignStmt) {
-		 for (ValueBox def: node.getDefBoxes()) {
-			Value value = def.getValue();
-			if (value instanceof Local)
-				inValue.remove((Local) value);
-		 }
-		 for (ValueBox use: node.getUseBoxes()) {
-			Value value = use.getValue();
-			if (value instanceof Local)
-				inValue.add((Local) value);
-			/*if (value instanceof FieldRef)
-			{
-				FieldRef ffr = (FieldRef) value;
-                SootField l =  ffr.getField();
-                System.out.println(" found fieldref " + l);
+			 for (ValueBox def: node.getDefBoxes()) {
+				Value value = def.getValue();
+				if (value instanceof Local){
+					inValue.remove(value);
+				}
+				if (value instanceof FieldRef){
+					if(inValue.contains(value))
+						inValue.clear();
+					FieldRef fieldRef = (FieldRef) value;
+					inValue.remove(new EquivalentValue(fieldRef));
+				}
+			 }
+			 for (ValueBox use: node.getUseBoxes()) {
+					Value value = use.getValue();
+					if (value instanceof Local)
+						inValue.add(value);
+					if (value instanceof FieldRef)
+					{
+						FieldRef ffr = (FieldRef) value;
+		                inValue.add(new EquivalentValue(ffr));
+					}
+				 }
+			  /*if (node instanceof DefinitionStmt) {
+			        DefinitionStmt ds = (DefinitionStmt) node;
+			        Value lhs = ds.getLeftOp();
+			        Value rhs = ds.getRightOp();
+			            if (rhs instanceof NewExpr) {
+			                inValue.clear();
+			            } 
+			    }*/
+			} 
+		else if (node instanceof ReturnStmt) {
+				Value value = ((ReturnStmt) node).getOp();
+				//inValue.add(rhsOp);
+				if(value instanceof FieldRef){
+					FieldRef rhsOp = (FieldRef) value;
+					SootField l = ((FieldRef) rhsOp).getField();
+					RefType r = l.getDeclaringClass().getType();
+					inValue.add(new EquivalentValue(rhsOp));
+				}
+	            inValue.remove(RETURN_LOCAL);
 			}
-			if (value instanceof StaticFieldRef)
-			{
-				StaticFieldRef ffr = (StaticFieldRef) value;
-                SootField l =  ffr.getField();
-                System.out.println(" found Staticfieldref " + l);
-			}
-			if (value instanceof InstanceFieldRef)
-			{
-				InstanceFieldRef ffr = (InstanceFieldRef) value;
-				SootField s =  ffr.getField();
-                Value l =  (Value) ffr.getBase();
-                System.out.println(" found Instancefieldref " + l);
-                //inValue.add((Local) l);
-			}*/
-		 }
-		} else if (node instanceof ReturnStmt) {
-			Value rhsOp = ((ReturnStmt) node).getOp();
-            inValue.add((Local)rhsOp);
-            inValue.remove(RETURN_LOCAL);
-		}
 		return inValue;
 	}
+
 	@Override
-	public FlowSet<Local> callEntryFlowFunction(
-			Context<SootMethod, Unit, FlowSet<Local>> context,
-			SootMethod targetMethod, Unit unit, FlowSet<Local> entryValue) {
-		// Initialise result to empty map
-		FlowSet<Local> exitValue = topValue();
-		// Map arguments to parameters
+	public Set<Value> callEntryFlowFunction(
+			Context<SootMethod, Unit, Set<Value>> context,
+			SootMethod targetMethod, Unit unit, Set<Value> entryValue) {
+		Set<Value> exitValue = topValue();
 		InvokeExpr ie = ((Stmt) unit).getInvokeExpr();
 		for (int i = 0; i < ie.getArgCount(); i++) {
 			Value arg = ie.getArg(i);
 			Local param = targetMethod.getActiveBody().getParameterLocal(i);
-			if(entryValue.contains((Local)arg)){
-				exitValue.add((Local)param);
+			if(entryValue.contains(arg)){
+				//SootField l = (SootField)param;
+				//RefType r = l.getDeclaringClass().getType();
+				exitValue.add(param);
 			}
 		}
-		// And instance of the this local
 		if (ie instanceof InstanceInvokeExpr) {
 			Value instance = ((InstanceInvokeExpr) ie).getBase();
 			Local thisLocal = targetMethod.getActiveBody().getThisLocal();
-			if(entryValue.contains((Local)instance)){
+			if(entryValue.contains(instance)){
 				exitValue.add(thisLocal);
 			}
 		}
-		// Return the exit value at the called method
 		return exitValue;
 	}
+
 	@Override
-	public FlowSet<Local> callExitFlowFunction(
-			Context<SootMethod, Unit, FlowSet<Local>> context,
-			SootMethod targetMethod, Unit unit, FlowSet<Local> outValue) {
-		// Initialise result to an empty value
-		FlowSet<Local> afterCallValue = topValue();
-		// Only propagate return values
+	public Set<Value> callExitFlowFunction(
+			Context<SootMethod, Unit, Set<Value>> context,
+			SootMethod targetMethod, Unit unit, Set<Value> outValue) {
+		Set<Value>  afterCallValue = topValue();
 		if (unit instanceof AssignStmt) {
 			Value lhsOp = ((AssignStmt) unit).getLeftOp();
 			if(outValue.contains(RETURN_LOCAL)){
-				afterCallValue.add((Local)lhsOp);
+				//SootField l = ((FieldRef) lhsOp).getField();
+				//RefType r = l.getDeclaringClass().getType();
+				afterCallValue.add(lhsOp);
 			}
 		}
-		// Return the result with the returned value
 		return afterCallValue;
 	}
+
 	@Override
-	public FlowSet<Local> callLocalFlowFunction(
-			Context<SootMethod, Unit, FlowSet<Local>> context, Unit unit,
-			FlowSet<Local> outValue) {
+	public Set<Value> callLocalFlowFunction(
+			Context<SootMethod, Unit, Set<Value>> context, Unit node,
+			Set<Value> outValue) {
 		// Initialise result to the input
-		FlowSet<Local> afterCallValue = new ArraySparseSet<Local>();
-		outValue.copy(afterCallValue);
-		// Remove information for return value (as it's value will flow from the call)
-		if (unit instanceof AssignStmt) {
-			Value lhsOp = ((AssignStmt) unit).getLeftOp();
-			afterCallValue.remove((Local) lhsOp);
-		}
-		return afterCallValue;
+		        Set<Value>  afterCallValue = new HashSet<Value>();
+				afterCallValue.addAll(outValue);
+				// Remove information for return value (as it's value will flow from the call)
+				if (node instanceof AssignStmt) {
+					Value lhsOp = ((AssignStmt) node).getLeftOp();
+					afterCallValue.remove(lhsOp);
+				}
+				return afterCallValue;
 	}
+
 	@Override
-	public FlowSet<Local> boundaryValue(SootMethod entryPoint) {
-		return new ArraySparseSet<Local>();
+	public Set<Value> boundaryValue(SootMethod entryPoint) {
+		return new HashSet<Value>();
 	}
+
 	@Override
-	public FlowSet<Local> copy(FlowSet<Local> src) {
-		FlowSet<Local> result = new ArraySparseSet<Local>();
-		src.copy(result);
+	public Set<Value> copy(Set<Value> src) {
+		Set<Value> result = new HashSet<Value>();
+		result.addAll(src);
 		return result;
 	}
+
 	@Override
-	public FlowSet<Local> meet(FlowSet<Local> op1, FlowSet<Local> op2) {
-		FlowSet<Local> result = new ArraySparseSet<Local>();
-		op1.union(op2, result);
+	public Set<Value> meet(Set<Value> op1, Set<Value> op2) {
+		Set<Value> result = new HashSet<Value>();
+		result.addAll(op1);
+		result.addAll(op2);
 		return result;
 	}
+
 	@Override
 	public ProgramRepresentation<SootMethod, Unit> programRepresentation() {
 		return DefaultJimpleRepresentation.v();
 	}
+
 	@Override
-	public FlowSet<Local> topValue() {
-		return new ArraySparseSet<Local>();
+	public Set<Value> topValue() {
+		return new HashSet<Value>();
 	}
-	
+
 }
+

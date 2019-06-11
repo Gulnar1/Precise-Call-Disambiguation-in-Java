@@ -89,10 +89,10 @@ public class Context<M,N,A> implements soot.Context, Comparable<Context<M,N,A>> 
 	private M method;
 
 	/** The data flow values at the exit of each node. */
-	private Map<N,A> outValues;
+	public Map<N,A> outValues;
 
 	/** The data flow values at the entry of each node. */
-	private Map<N,A> inValues;
+	public Map<N,A> inValues;
 
 	private Table<N, N, A> vals = HashBasedTable.create();
 
@@ -335,6 +335,7 @@ public class Context<M,N,A> implements soot.Context, Comparable<Context<M,N,A>> 
 	 * @param value the new data flow at the node exit
 	 */
 	public void setValueAfter(N node, A value) {
+		//System.out.println("Setting value after " + node);
 		outValues.put(node, value);
 	}
 	/** 
@@ -344,6 +345,7 @@ public class Context<M,N,A> implements soot.Context, Comparable<Context<M,N,A>> 
 	 * @param value the new data flow at the node entry
 	 */
 	public void setValueBefore(N node, A value) {
+		//System.out.println("Setting value before " + node);
 		inValues.put(node, value);
 	}
 	

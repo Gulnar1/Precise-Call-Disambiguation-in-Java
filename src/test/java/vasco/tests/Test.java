@@ -3,7 +3,7 @@ package vasco.tests;
 public class Test {
 	int n, a, b, c;
 	public void set(){
-		a = five();
+		//a = five();
 		b = a;
 		c = b;
 		n = c;
@@ -12,7 +12,7 @@ public class Test {
 		Test obj = new Test();
 		obj.a = 3;
 		obj.b = obj.a * 2;
-		//obj.set();
+		obj.c = five();
 		Test obj1;
 		obj1 = obj;
 		obj.b = obj.a + obj.n;   

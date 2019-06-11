@@ -246,12 +246,20 @@ public abstract class InterProceduralAnalysis<M,N,A> {
 		Map<N,A> outValues = new HashMap<N,A>();
 		// Merge over all contexts
 		for (M method : contexts.keySet()) {
+			//System.out.println("~~~~~~~~~~~~~~~~~~~~Method: "+ method + "~~~~~~~~~~~~~~~~~~~~~~~~~");
 			for (N node : programRepresentation().getControlFlowGraph(method)) {
 				A in = topValue();
 				A out = topValue();
+				//System.out.println("----------------------------------Node: "+ node+ "-----------------------");
 				for (Context<M,N,A> context : contexts.get(method)) {
+					//System.out.println("INB: "+ in);
 					in = meet(in, context.getValueBefore(node));
+					//in = context.getValueBefore(node);
+					//System.out.println("IN: "+ in);
+					//System.out.println("OUTB: "+ out);
 					out = meet(out, context.getValueAfter(node));
+					//out = context.getValueAfter(node);
+					//System.out.println("OUT: "+ out);
 				}
 				inValues.put(node, in);
 				outValues.put(node, out);

@@ -1,0 +1,573 @@
+[H[2J[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vasco 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/heros/heros/1.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata heros:heros:1.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): soot-build.cs.uni-paderborn.de: Temporary failure in name resolution
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/ca/mcgill/sable/jasmin/3.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata ca.mcgill.sable:jasmin:3.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): soot-build.cs.uni-paderborn.de
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/pxb/android/axml/2.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata pxb.android:axml:2.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): soot-build.cs.uni-paderborn.de
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ vasco ---
+Soot started on Sat Jun 01 10:21:36 IST 2019
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.1 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : args := @parameter0: java.lang.String[]~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = []
+
+OUT = []
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : i = 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = []
+
+OUT = []
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : $r0 = new vasco.tests.A~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = []
+
+OUT = [{$r0=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r0.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r0=vasco.tests.A}]
+[NEW] X1 -> X2 <vasco.tests.A: void <init>()> 
+ENTRY(X2) = [{this=vasco.tests.A}]
+OUT = [{$r0=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.A~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.A}]
+
+OUT = [{this=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.A}]
+[NEW] X2 -> X3 <java.lang.Object: void <init>()> 
+ENTRY(X3) = [{l0=vasco.tests.A}]
+OUT = [{this=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : l0 := @this: java.lang.Object~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.A}]
+
+OUT = [{l0=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.A}]
+
+OUT = [{l0=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.A}]
+[HIT] X2 -> X3 <java.lang.Object: void <init>()> 
+EXIT(X3) = [{l0=vasco.tests.A}]
+OUT = [{this=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.A}]
+
+OUT = [{this=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r0.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r0=vasco.tests.A}]
+[HIT] X1 -> X2 <vasco.tests.A: void <init>()> 
+EXIT(X2) = [{this=vasco.tests.A}]
+OUT = [{$r0=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : a = $r0~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r0=vasco.tests.A}]
+
+OUT = [{$r0=vasco.tests.A, a=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : $r1 = new vasco.tests.B~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r0=vasco.tests.A, a=vasco.tests.A}]
+
+OUT = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r1.<vasco.tests.B: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+[NEW] X1 -> X4 <vasco.tests.B: void <init>()> 
+ENTRY(X4) = [{this=vasco.tests.B}]
+OUT = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.B~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+[NEW] X4 -> X5 <vasco.tests.A: void <init>()> 
+ENTRY(X5) = [{this=vasco.tests.B}]
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.A~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+[NEW] X5 -> X6 <java.lang.Object: void <init>()> 
+ENTRY(X6) = [{l0=vasco.tests.B}]
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : l0 := @this: java.lang.Object~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.B}]
+
+OUT = [{l0=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.B}]
+
+OUT = [{l0=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+[HIT] X5 -> X6 <java.lang.Object: void <init>()> 
+EXIT(X6) = [{l0=vasco.tests.B}]
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+[HIT] X4 -> X5 <vasco.tests.A: void <init>()> 
+EXIT(X5) = [{this=vasco.tests.B}]
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r1.<vasco.tests.B: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+[HIT] X1 -> X4 <vasco.tests.B: void <init>()> 
+EXIT(X4) = [{this=vasco.tests.B}]
+OUT = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : b = $r1~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+
+OUT = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : $r2 = new vasco.tests.C~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A}]
+
+OUT = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r2.<vasco.tests.C: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+[NEW] X1 -> X7 <vasco.tests.C: void <init>()> 
+ENTRY(X7) = [{this=vasco.tests.C}]
+OUT = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.C~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+[NEW] X7 -> X8 <vasco.tests.A: void <init>()> 
+ENTRY(X8) = [{this=vasco.tests.C}]
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.A~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+[NEW] X8 -> X9 <java.lang.Object: void <init>()> 
+ENTRY(X9) = [{l0=vasco.tests.C}]
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : l0 := @this: java.lang.Object~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.C}]
+
+OUT = [{l0=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{l0=vasco.tests.C}]
+
+OUT = [{l0=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<java.lang.Object: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+[HIT] X8 -> X9 <java.lang.Object: void <init>()> 
+EXIT(X9) = [{l0=vasco.tests.C}]
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke this.<vasco.tests.A: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+[HIT] X7 -> X8 <vasco.tests.A: void <init>()> 
+EXIT(X8) = [{this=vasco.tests.C}]
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}]
+
+OUT = [{this=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : specialinvoke $r2.<vasco.tests.C: void <init>()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+[HIT] X1 -> X7 <vasco.tests.C: void <init>()> 
+EXIT(X7) = [{this=vasco.tests.C}]
+OUT = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : c = $r2~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, $r0=vasco.tests.A, a=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : if i <= 0 goto a = c~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.A, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.A, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : a = b~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.A, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : goto [?= i#4 = 0]~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : a = c~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.A, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : i#4 = 0~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : virtualinvoke a.<vasco.tests.A: void m()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+[NEW] X1 -> X10 <vasco.tests.A: void m()> 
+ENTRY(X10) = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : this := @this: vasco.tests.A~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : $r0 = <java.lang.System: java.io.PrintStream out>~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Inside A")~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+OUT = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+
+OUT = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : virtualinvoke a.<vasco.tests.A: void m()>()~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+[HIT] X1 -> X10 <vasco.tests.A: void m()> 
+EXIT(X10) = [{this=vasco.tests.C}, {this=vasco.tests.B}]
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : return~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IN = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+
+OUT = [{$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.B, $r0=vasco.tests.A, $r2=vasco.tests.C}, {$r1=vasco.tests.B, c=vasco.tests.C, b=vasco.tests.B, a=vasco.tests.C, $r0=vasco.tests.A, $r2=vasco.tests.C}]
+---------------------------------------
+--------wjtp.rf & {enabled=true}-----------
+------------------------------------ANALYSIS METHODS--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <vasco.tests.A: void main(java.lang.String[])>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :args := @parameter0: java.lang.String[]  ------------------------------
+IN:  
+OUT: 
+-------------------------IN & OUT :i = 2  ------------------------------
+IN:  
+OUT: 
+-------------------------IN & OUT :$r0 = new vasco.tests.A  ------------------------------
+IN:  
+OUT: Refers-to Relation: $r0-> vasco.tests.A,
+
+-------------------------IN & OUT :specialinvoke $r0.<vasco.tests.A: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: $r0-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r0-> vasco.tests.A,
+
+-------------------------IN & OUT :a = $r0  ------------------------------
+IN:  Refers-to Relation: $r0-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+-------------------------IN & OUT :$r1 = new vasco.tests.B  ------------------------------
+IN:  Refers-to Relation: $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+-------------------------IN & OUT :specialinvoke $r1.<vasco.tests.B: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+-------------------------IN & OUT :b = $r1  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+-------------------------IN & OUT :$r2 = new vasco.tests.C  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :specialinvoke $r2.<vasco.tests.C: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :c = $r2  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, b-> vasco.tests.B, $r0-> vasco.tests.A, a-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.A, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :if i <= 0 goto a = c  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.A, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.A, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :a = b  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.A, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :goto [?= i#4 = 0]  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :a = c  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.A, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :i#4 = 0  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :virtualinvoke a.<vasco.tests.A: void m()>()  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+OUT: Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.B, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+Refers-to Relation: $r1-> vasco.tests.B, c-> vasco.tests.C, b-> vasco.tests.B, a-> vasco.tests.C, $r0-> vasco.tests.A, $r2-> vasco.tests.C,
+
+----------------------END OF METHOD-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <vasco.tests.B: void <init>()>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :this := @this: vasco.tests.B  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.B,
+
+-------------------------IN & OUT :specialinvoke this.<vasco.tests.A: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.B,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.B,
+
+----------------------END OF METHOD-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <vasco.tests.C: void <init>()>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :this := @this: vasco.tests.C  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+
+-------------------------IN & OUT :specialinvoke this.<vasco.tests.A: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+
+----------------------END OF METHOD-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <java.lang.Object: void <init>()>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :l0 := @this: java.lang.Object  ------------------------------
+IN:  Refers-to Relation: l0-> vasco.tests.B,
+Refers-to Relation: l0-> vasco.tests.A,
+Refers-to Relation: l0-> vasco.tests.C,
+
+OUT: Refers-to Relation: l0-> vasco.tests.B,
+Refers-to Relation: l0-> vasco.tests.A,
+Refers-to Relation: l0-> vasco.tests.C,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: l0-> vasco.tests.B,
+Refers-to Relation: l0-> vasco.tests.A,
+Refers-to Relation: l0-> vasco.tests.C,
+
+OUT: Refers-to Relation: l0-> vasco.tests.B,
+Refers-to Relation: l0-> vasco.tests.A,
+Refers-to Relation: l0-> vasco.tests.C,
+
+----------------------END OF METHOD-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <vasco.tests.A: void m()>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :this := @this: vasco.tests.A  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+-------------------------IN & OUT :$r0 = <java.lang.System: java.io.PrintStream out>  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+-------------------------IN & OUT :virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Inside A")  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+OUT: Refers-to Relation: this-> vasco.tests.C,
+Refers-to Relation: this-> vasco.tests.B,
+
+----------------------END OF METHOD-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: <vasco.tests.A: void <init>()>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------IN & OUT :this := @this: vasco.tests.A  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+-------------------------IN & OUT :specialinvoke this.<java.lang.Object: void <init>()>()  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+-------------------------IN & OUT :return  ------------------------------
+IN:  Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+OUT: Refers-to Relation: this-> vasco.tests.A,
+Refers-to Relation: this-> vasco.tests.B,
+Refers-to Relation: this-> vasco.tests.C,
+
+----------------------END OF METHOD-----------------------------
+Transforming jdk.internal.util.xml.BasicXmlPropertiesProvider... 
+Transforming vasco.tests.A... 
+Transforming jdk.net.SocketFlow... 
+Transforming jdk.net.ExtendedSocketOptions... 
+Transforming jdk.internal.util.xml.PropertiesDefaultHandler... 
+Transforming jdk.net.NetworkPermission... 
+Transforming jdk.internal.org.objectweb.asm.ClassWriter... 
+Transforming jdk.internal.org.objectweb.asm.MethodVisitor... 
+Transforming jdk.internal.org.objectweb.asm.AnnotationVisitor... 
+Transforming jdk.internal.org.objectweb.asm.Label... 
+Transforming jdk.net.SocketFlow$Status... 
+Transforming jdk.Exported... 
+Transforming jdk.net.ExtendedSocketOptions$ExtSocketOption... 
+Transforming jdk.internal.org.xml.sax.helpers.DefaultHandler... 
+Transforming jdk.internal.org.xml.sax.SAXException... 
+Transforming jdk.internal.org.xml.sax.Attributes... 
+Transforming jdk.internal.org.xml.sax.InputSource... 
+Transforming jdk.internal.org.xml.sax.SAXParseException... 
+Transforming jdk.internal.util.xml.impl.XMLStreamWriterImpl... 
+Transforming jdk.internal.org.xml.sax.Locator... 
+Transforming jdk.internal.util.xml.impl.SAXParserImpl... 
+Transforming jdk.internal.util.xml.SAXParser... 
+Transforming jdk.internal.util.xml.XMLStreamException... 
+Transforming jdk.internal.util.xml.XMLStreamWriter... 
+Transforming jdk.internal.org.objectweb.asm.ClassVisitor... 
+Transforming jdk.internal.org.objectweb.asm.ClassReader... 
+Transforming jdk.internal.org.objectweb.asm.ByteVector... 
+Transforming jdk.internal.org.objectweb.asm.Item... 
+Transforming jdk.internal.org.objectweb.asm.AnnotationWriter... 
+Transforming jdk.internal.org.objectweb.asm.Attribute... 
+Transforming jdk.internal.org.objectweb.asm.FieldWriter... 
+Transforming jdk.internal.org.objectweb.asm.MethodWriter... 
+Transforming jdk.internal.org.objectweb.asm.TypePath... 
+Transforming jdk.internal.org.objectweb.asm.Handle... 
+Transforming jdk.internal.org.objectweb.asm.FieldVisitor... 
+Transforming jdk.internal.org.objectweb.asm.Type... 
+Transforming jdk.internal.org.objectweb.asm.Frame... 
+Transforming jdk.internal.org.objectweb.asm.Edge... 
+Transforming jdk.internal.org.xml.sax.EntityResolver... 
+Transforming jdk.internal.org.xml.sax.DTDHandler... 
+Transforming jdk.internal.org.xml.sax.ContentHandler... 
+Transforming jdk.internal.org.xml.sax.ErrorHandler... 
+Transforming jdk.internal.util.xml.impl.XMLStreamWriterImpl$Element... 
+Transforming jdk.internal.util.xml.impl.XMLWriter... 
+Transforming jdk.internal.util.xml.impl.ParserSAX... 
+Transforming jdk.internal.org.xml.sax.XMLReader... 
+Transforming jdk.internal.org.objectweb.asm.Handler... 
+Transforming jdk.internal.org.objectweb.asm.Context... 
+Transforming jdk.internal.org.objectweb.asm.Opcodes... 
+Transforming jdk.internal.util.xml.impl.Parser... 
+Transforming jdk.internal.util.xml.impl.Pair... 
+Transforming jdk.internal.util.xml.impl.Attrs... 
+Transforming jdk.internal.util.xml.impl.Input... 
+Transforming jdk.internal.org.xml.sax.SAXNotRecognizedException... 
+Transforming jdk.internal.org.xml.sax.SAXNotSupportedException... 
+Transforming jdk.internal.util.xml.impl.ReaderUTF16... 
+Transforming jdk.internal.util.xml.impl.ReaderUTF8... 
+Transforming vasco.tests.B... 
+Transforming vasco.tests.C... 
+Soot finished on Sat Jun 01 10:22:04 IST 2019
+Soot has run for 0 min. 28 sec.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 51.929s
+[INFO] Finished at: Sat Jun 01 10:22:04 IST 2019
+[INFO] Final Memory: 106M/351M
+[INFO] ------------------------------------------------------------------------

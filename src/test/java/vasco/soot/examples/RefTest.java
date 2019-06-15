@@ -9,6 +9,7 @@ import org.junit.Test;
 import soot.Local;
 import soot.PackManager;
 import soot.RefType;
+import soot.Scene;
 import soot.SceneTransformer;
 import soot.SootField;
 import soot.SootMethod;
@@ -26,18 +27,22 @@ public class RefTest extends SceneTransformer{
 		analysis = new RefAnalysis();
 		analysis.doAnalysis();
 		DataFlowSolution<Unit,Set<Map<Value, RefType>>> solution = analysis.getMeetOverValidPathsSolution();
-		System.out.println("--------" + arg0 + " & " + arg1 + "-----------" );
+		//System.out.println("--------" + arg0 + " & " + arg1 + "-----------" );
+		SootMethod sm = Scene.v().getMainMethod();
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~MAIN  METHOD NAME: " + sm + "~~~~~~~~~~~~~~~~~~~");
 		System.out.println("------------------------------------ANALYSIS METHODS--------------------------------");
 		for (SootMethod sootMethod : analysis.getMethods()) {
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: " + sootMethod + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: " + sootMethod + "~~~~~~~~~~~~~~~~~~~");
 			for (Unit unit : sootMethod.getActiveBody().getUnits()) {
-				System.out.print("-------------------------IN & OUT :");
-				System.out.println(unit + "  ------------------------------");
+				System.out.print("----------------IN & OUT :");
+				System.out.println(unit + "  -----------------------");
 				System.out.println("IN:  " + format(solution.getValueBefore(unit)));
 				System.out.println("OUT: " + format(solution.getValueAfter(unit)));
 			}
 			System.out.println("----------------------END OF METHOD-----------------------------");
-		}		
+		}
+		
+		
 	}
 	
 	private static String format(Set<Map<Value, RefType>> s) {

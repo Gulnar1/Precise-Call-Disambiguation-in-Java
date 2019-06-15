@@ -1,6 +1,7 @@
 package vasco.soot.examples;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.List;
 import java.util.Set;
@@ -10,6 +11,7 @@ import org.junit.Test;
 import soot.Local;
 import soot.PackManager;
 import soot.RefType;
+import soot.Scene;
 import soot.SceneTransformer;
 import soot.SootField;
 import soot.SootMethod;
@@ -27,27 +29,74 @@ public class RefToTest extends SceneTransformer{
 	protected void internalTransform(String arg0, @SuppressWarnings("rawtypes") Map arg1) {
 		analysis = new RefToAnalysis();
 		analysis.doAnalysis();
-		DataFlowSolution<Unit, Set<HashMap<Value,RefType>>> solution = analysis.getMeetOverValidPathsSolution();
-		System.out.println("--------" + arg0 + "&" + arg1 + "-----------" );
-		System.out.println("------------------------------------ANALYSIS METHODS--------------------------------");
-		for (SootMethod sootMethod : analysis.getMethods()) {
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   METHOD NAME: " +sootMethod + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		ContextTransitionGraph CTG = new ContextTransitionGraph();
+		int currentState = 0;
+		DataFlowSolution<Unit, Set<Map<Value,RefType>>> solution = analysis.getMeetOverValidPathsSolution();
+		//System.out.println("--------" + arg0 + "&" + arg1 + "-----------" );
+		SootMethod sootMethod = Scene.v().getMainMethod();
+		//System.out.println("------------------------------------ANALYSIS METHODS--------------------------------");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~MAIN METHOD NAME: " +sootMethod + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			for (Unit unit : sootMethod.getActiveBody().getUnits()) {
 				System.out.print("-----------------------IN & OUT : ");
 				System.out.println(unit + "----------------------------");
-				System.out.println("IN:  " + format(solution.getValueBefore(unit)));
-				System.out.println("OUT: " + format(solution.getValueAfter(unit)));
+				Set<Map<Value,RefType>> in = solution.getValueBefore(unit);
+				System.out.println("IN:  " + format(in));
+				Set<Map<Value,RefType>> out = solution.getValueAfter(unit);
+				System.out.println("OUT: " + format(out));
+				currentState = createCTG(in, out, CTG, unit, currentState);
 			}
-			System.out.println("----------------------END OF METHOD-----------------------------");
-		}		
+			System.out.println("----------------------CALLEE-CONTEXT TRANSITION  GRAPH-----------------------------");
+			CTG.printCTG();	
+			System.out.println("---------------------------------------------------------------------------------------------");
+	}
+	int createCTG(Set<Map<Value,RefType>> in , Set<Map<Value,RefType>> out, ContextTransitionGraph CTG, Unit node, int currentState){
+	//System.out.print("------Node -> " + node + ":");
+	if (in.equals(analysis.topValue()) && out.equals(analysis.topValue()) ){
+		//System.out.println("	Both Null------------");
+		CTG.addEdgeLink(new Integer(0), node, new Integer(0));
 	}
 	
-	private static String format(Set<HashMap<Value,RefType>> d) {
+	else if(out.equals(in)){
+		//System.out.println("	Both equal------------");
+		for(Map<Value,RefType> hm : in){
+			int node_no = CTG.nodes.get(hm);
+			CTG.addEdgeLink(node_no, node, node_no);
+		}
+	}
+	
+	else{
+		//System.out.println("	Both Not Null------------");
+		if(in.equals(analysis.topValue())){
+			//System.out.println("	IN Null------------");
+			for(Map<Value,RefType> hm : out){
+				currentState++;
+				CTG.nodes.put(hm, currentState);
+				CTG.addEdgeLink(new Integer(0), node, currentState);
+			}
+		}
+		
+		else{
+			//System.out.println("	None Null------------");
+			Iterator<Map<Value,RefType>> value = in.iterator(); 
+			for(Map<Value,RefType> hm : out){
+				Map<Value, RefType> inhm = value.next(); 
+				int node_no = CTG.nodes.get(inhm);
+				currentState++;
+				CTG.nodes.put(hm, currentState);
+				CTG.addEdgeLink(node_no, node, currentState);
+			}
+		}	
+	}
+	//CTG.printCTG();
+	return currentState;
+}
+	
+	private static String format(Set<Map<Value,RefType>> d) {
 		if (d == null) {
 			return "";
 		}
 		StringBuffer sb = new StringBuffer();
-		for( HashMap<Value,RefType> hm : d){
+		for( Map<Value,RefType> hm : d){
 			sb.append("Refers-to Relation: ");
 			for(Value val : hm.keySet()){
 				sb.append(" ").append(val).append("->");

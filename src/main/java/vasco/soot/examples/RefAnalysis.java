@@ -7,6 +7,8 @@ import java.util.Set;
 
 import soot.EquivalentValue;
 import soot.Local;
+import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.RefType;
 import soot.SootMethod;
@@ -36,7 +38,7 @@ import vasco.ForwardInterProceduralAnalysis;
   private static final Local RETURN_LOCAL = new JimpleLocal("@return", IntType.v()); 
   public RefAnalysis() {
 	  super();
-	  verbose = true;
+	  verbose = false;
   }
 @Override
 public Set<Map<Value, RefType>> normalFlowFunction(
@@ -82,7 +84,7 @@ public Set<Map<Value, RefType>> normalFlowFunction(
 		        		}	            		
 		            }
 		} 
-	System.out.println("");
+	//System.out.println("");
 	return outValue;
 }
 @Override
@@ -92,6 +94,33 @@ public Set<Map<Value, RefType>> callEntryFlowFunction(
 	//System.out.println("CallEntryFlowFunction");
 	Set<Map<Value, RefType>> entryValue = topValue();
 	InvokeExpr ie = ((Stmt) unit).getInvokeExpr();
+	
+	SootClass a = Scene.v().getSootClass("vasco.tests.A");
+	SootMethod m = a.getMethod("void RefToRelation(java.lang.Object,java.lang.Object)");
+	if(targetMethod == m){
+		System.out.println("Ignoring REF-TO-RELATION Function Call");
+		Value objref = ie.getArg(0);
+		Value classname = ie.getArg(1);
+		String s = classname.toString();
+		String name = s.substring(1, s.length()-1);
+		//System.out.println("String = " + name);
+		RefType rf = RefType.v(name);
+		//System.out.println("Object Reference = " + objref);
+		//System.out.println("Class = " + rf);
+		boolean hit = false;
+		for(Map<Value,RefType> hm : inValue){
+			//System.out.println("Value:" + hm.get(objref));
+			if(hm.get(objref) == rf){
+				hit = true;
+			}
+		}
+		if(hit)
+			System.out.println("		SUCCESS!!!!!!	");
+		else
+			System.out.println("		FAILURE!!!!!!	");
+	}
+	
+	else{
 	for (int i = 0; i < ie.getArgCount(); i++) {
 		Value arg = ie.getArg(i);
 		Local param = targetMethod.getActiveBody().getParameterLocal(i);
@@ -113,6 +142,7 @@ public Set<Map<Value, RefType>> callEntryFlowFunction(
 				entryValue.add(temp);
 			}
 		}
+	}
 	}
 	return entryValue;
 }

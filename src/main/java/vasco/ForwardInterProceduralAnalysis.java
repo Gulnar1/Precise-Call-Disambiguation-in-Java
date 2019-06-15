@@ -17,9 +17,19 @@
  */
 package vasco;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
+import soot.RefType;
+import soot.Scene;
+import soot.SootClass;
+import soot.Type;
+import soot.SootMethod;
+import soot.Value;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
 
 /**
  * A generic forward-flow inter-procedural analysis which is fully
@@ -79,23 +89,18 @@ public abstract class ForwardInterProceduralAnalysis<M,N,A> extends InterProcedu
 			N node = currentContext.getWorkList().pollFirst();
 
 			if (node != null) {
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : " +  node + "~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : " +  node + "~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 				// Compute the IN data flow value (only for non-entry units).
 				List<N> predecessors = currentContext.getControlFlowGraph().getPredsOf(node);
 				if (predecessors.size() != 0) {
 					// Initialise to the TOP value
 					A in = topValue();
-					//System.out.println("-------Merging OUT values of predecessors of " + node);
 					// Merge OUT values of all predecessors
 					for (N pred : predecessors) {
-						//System.out.println("predecessor = " + pred);
 						A predOut = currentContext.getValueAfter(pred);
-						//System.out.println("predOut = " + predOut);
 						in = meet(in, predOut);
 					}					
 					// Set the IN value at the node to the result
-					//A tempin = topValue();
-					//tempin = in;
 					currentContext.setValueBefore(node, in);
 				}
 				
@@ -115,11 +120,21 @@ public abstract class ForwardInterProceduralAnalysis<M,N,A> extends InterProcedu
 				
 				// Handle flow functions depending on whether this is a call statement or not
 				if (programRepresentation().isCall(node)) {
-
+					
 					out = topValue();
 					boolean hit = false;
 					if (!programRepresentation().resolveTargets(currentContext.getMethod(), node).isEmpty()) {
+	                
 					for (M targetMethod : programRepresentation().resolveTargets(currentContext.getMethod(), node)) {
+						
+						SootClass a = Scene.v().getSootClass("vasco.tests.A");
+						SootMethod m = a.getMethod("void RefToRelation(java.lang.Object,java.lang.Object)");
+						if(targetMethod == m){
+							System.out.println();
+							System.out.println("	NODE -> " + node);
+							out = callEntryFlowFunction(currentContext, targetMethod, node, in);
+							break;
+						}
 						A entryValue = callEntryFlowFunction(currentContext, targetMethod, node, in);
 						
 						CallSite<M,N,A> callSite = new CallSite<M,N,A>(currentContext, node);
@@ -166,24 +181,20 @@ public abstract class ForwardInterProceduralAnalysis<M,N,A> extends InterProcedu
 						// handle phantom method
 						out = callLocalFlowFunction(currentContext, node, in);
 					}
-				} else {
+				} //end of call node 
+				
+				else {
 					out = normalFlowFunction(currentContext, node, in);
 				}
 				if (verbose) {
-					//System.out.println("IN = " + in);
-					//System.out.println("IN : = " + currentContext.getValueBefore(node));
 					System.out.println("OUT = " + out);
-					//System.out.println("---------------------------------------");
 				}
 
 				// Merge with previous OUT to force monotonicity (harmless if flow functions are monotinic)
 				out = meet(out, prevOut);
 				// Set the OUT value
-				//A tempout = topValue();
-				//tempout = out;
 				currentContext.setValueAfter(node, out);
-				//System.out.println("OUT after merge= " + out);
-				System.out.println("---------------------------------------");
+				//System.out.println("---------------------------------------");
 				// If OUT has changed...
 				if (out.equals(prevOut) == false) {
 					// Then add successors to the work-list.
@@ -195,18 +206,6 @@ public abstract class ForwardInterProceduralAnalysis<M,N,A> extends InterProcedu
 				in = null;
 				System.gc();
 				
-				/*System.out.println("----------INVALUES----------");
-				for( N n :  currentContext.inValues.keySet()){
-					System.out.print("Node " + n);
-					System.out.println(" : InValue =" + currentContext.inValues.get(n) );
-					
-				}
-				System.out.println("----------OUTVALUES----------");
-				for( N n :  currentContext.outValues.keySet()){
-					System.out.print("Node " + n);
-					System.out.println(" : OutValue =" + currentContext.outValues.get(n) );
-					
-				}*/
 				// If the unit is in TAILS, then we have at least one
 				// path to the end of the method, so add the NULL unit
 				if (currentContext.getControlFlowGraph().getTails().contains(node)) {

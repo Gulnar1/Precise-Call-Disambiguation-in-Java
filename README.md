@@ -1,4 +1,8 @@
 
+The project is done using VASCO framework for performing precise inter-procedural data flow analysis using VAlue Sensitive COntexts developed by Rohan Padhye as part of his Master's thesis at IIT Bombay, being advised by Prof. Uday Khedker.
+
+The framework classes are present in the package vasco and are described in the paper: Interprocedural Data Flow Analysis in Soot using Value Contexts.
+
 ## Building with Maven ##
 
 ### Standalone build ###

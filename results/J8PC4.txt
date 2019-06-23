@@ -1,0 +1,395 @@
+[H[2J[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vasco 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/heros/heros/1.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata heros:heros:1.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): Failed to transfer file: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/heros/heros/1.0.0-SNAPSHOT/maven-metadata.xml. Return code is: 400 , ReasonPhrase:Repository version policy: RELEASE does not allow metadata in path: heros/heros/1.0.0-SNAPSHOT/maven-metadata.xml.
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/ca/mcgill/sable/jasmin/3.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata ca.mcgill.sable:jasmin:3.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): Failed to transfer file: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/ca/mcgill/sable/jasmin/3.0.0-SNAPSHOT/maven-metadata.xml. Return code is: 400 , ReasonPhrase:Repository version policy: RELEASE does not allow metadata in path: ca/mcgill/sable/jasmin/3.0.0-SNAPSHOT/maven-metadata.xml.
+Downloading: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/pxb/android/axml/2.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata pxb.android:axml:2.0.0-SNAPSHOT/maven-metadata.xml from/to soot-release (https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/): Failed to transfer file: https://soot-build.cs.uni-paderborn.de/nexus/repository/soot-release/pxb/android/axml/2.0.0-SNAPSHOT/maven-metadata.xml. Return code is: 400 , ReasonPhrase:Repository version policy: RELEASE does not allow metadata in path: pxb/android/axml/2.0.0-SNAPSHOT/maven-metadata.xml.
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ vasco ---
+Soot started on Sun Jun 16 23:12:22 IST 2019
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.1 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+
+	NODE -> staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")
+	IN VALUE -> [{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}]
+Ignoring REF-TO-RELATION Function Call
+		FAILURE!!!!!!	
+
+	NODE -> staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(p#3, "vasco.tests.VirtualCalls.BJ8PC")
+	IN VALUE -> [{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}]
+Ignoring REF-TO-RELATION Function Call
+		SUCCESS!!!!!!	
+
+	NODE -> staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")
+	IN VALUE -> [{$r3=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC}, {$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC}]
+Ignoring REF-TO-RELATION Function Call
+		SUCCESS!!!!!!	
+
+	NODE -> staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>($r8, "vasco.tests.VirtualCalls.AJ8PC")
+	IN VALUE -> [{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC}, {$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=vasco.tests.VirtualCalls.AJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC}]
+Ignoring REF-TO-RELATION Function Call
+		FAILURE!!!!!!	
+~~~~~~~~~~~~~~~~~~~~~~~MAIN METHOD NAME: <vasco.tests.VirtualCalls.J8PC4: void main(java.lang.String[])>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------IN & OUT : args := @parameter0: java.lang.String[]----------------------------
+IN:  
+OUT: 
+-----------------------IN & OUT : $r0 = newarray (vasco.tests.VirtualCalls.InterfaceJ8PC1)[3]----------------------------
+IN:  
+OUT: 
+-----------------------IN & OUT : $r1 = new vasco.tests.VirtualCalls.AJ8PC----------------------------
+IN:  
+OUT: Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r1.<vasco.tests.VirtualCalls.AJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r0[0] = $r1----------------------------
+IN:  Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r2 = new vasco.tests.VirtualCalls.BJ8PC----------------------------
+IN:  Refers-to Relation:  $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r2.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r0[1] = $r2----------------------------
+IN:  Refers-to Relation:  $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r3 = new vasco.tests.VirtualCalls.CJ8PC----------------------------
+IN:  Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r3-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r3.<vasco.tests.VirtualCalls.CJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r3-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r3-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r0[2] = $r3----------------------------
+IN:  Refers-to Relation:  $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r3-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : types = $r0----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : p = 0----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : goto [?= (branch)]----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : i1 = types[p]----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : interfaceinvoke i1.<vasco.tests.VirtualCalls.InterfaceJ8PC1: void func()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : p = p + 1----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : if p <= 2 goto i1 = types[p]----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r4 = new vasco.tests.VirtualCalls.BJ8PC----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r4.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : p#3 = $r4----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : interfaceinvoke p#3.<vasco.tests.VirtualCalls.InterfaceJ8PC2: void method()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(p#3, "vasco.tests.VirtualCalls.BJ8PC")----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : a = 4----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $i0 = a % 2----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : if $i0 != 0 goto $r5 = new vasco.tests.VirtualCalls.BJ8PC----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r9 = new vasco.tests.VirtualCalls.AJ8PC----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r9.<vasco.tests.VirtualCalls.AJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : i1 = $r9----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : goto [?= staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")]----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : $r5 = new vasco.tests.VirtualCalls.BJ8PC----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r5.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : i1 = $r5----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : $r6 = new vasco.tests.VirtualCalls.CJ8PC----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : specialinvoke $r6.<vasco.tests.VirtualCalls.CJ8PC: void <init>()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+-----------------------IN & OUT : obj = $r6----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f> = i1----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : $r7 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : interfaceinvoke $r7.<vasco.tests.VirtualCalls.InterfaceJ8PC1: void func()>()----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : $r8 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>($r8, "vasco.tests.VirtualCalls.AJ8PC")----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+-----------------------IN & OUT : return----------------------------
+IN:  Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+OUT: Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.BJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.BJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC, $r5-> vasco.tests.VirtualCalls.BJ8PC,
+Refers-to Relation:  $r3-> vasco.tests.VirtualCalls.CJ8PC, $r6-> vasco.tests.VirtualCalls.CJ8PC, $r9-> vasco.tests.VirtualCalls.AJ8PC, obj-> vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>-> vasco.tests.VirtualCalls.AJ8PC, $r2-> vasco.tests.VirtualCalls.BJ8PC, $r4-> vasco.tests.VirtualCalls.BJ8PC, $r1-> vasco.tests.VirtualCalls.AJ8PC, $r0[0]-> vasco.tests.VirtualCalls.AJ8PC, i1-> vasco.tests.VirtualCalls.AJ8PC, $r0[2]-> vasco.tests.VirtualCalls.CJ8PC, $r0[1]-> vasco.tests.VirtualCalls.BJ8PC, p#3-> vasco.tests.VirtualCalls.BJ8PC,
+
+Total no. of statements processed = 80
+*****************************CALLEE-CONTEXT TRANSITION  GRAPH*****************************
+--------- NODES IN CTG ------------
+0->{}
+3->{$r2=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+10->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC}
+4->{$r0[1]=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+13->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC}
+5->{$r0[1]=vasco.tests.VirtualCalls.BJ8PC, $r3=vasco.tests.VirtualCalls.CJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+6->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+14->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC}
+12->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC}
+15->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC}
+17->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC}
+1->{$r1=vasco.tests.VirtualCalls.AJ8PC}
+8->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+9->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+18->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, $r9=vasco.tests.VirtualCalls.AJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=vasco.tests.VirtualCalls.AJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.AJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC}
+11->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+16->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r6=vasco.tests.VirtualCalls.CJ8PC, obj=vasco.tests.VirtualCalls.CJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC, i1=vasco.tests.VirtualCalls.BJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, p#3=vasco.tests.VirtualCalls.BJ8PC, $r5=vasco.tests.VirtualCalls.BJ8PC}
+2->{$r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+7->{$r3=vasco.tests.VirtualCalls.CJ8PC, $r0[2]=vasco.tests.VirtualCalls.CJ8PC, $r0[1]=vasco.tests.VirtualCalls.BJ8PC, $r2=vasco.tests.VirtualCalls.BJ8PC, $r4=vasco.tests.VirtualCalls.BJ8PC, $r1=vasco.tests.VirtualCalls.AJ8PC, $r0[0]=vasco.tests.VirtualCalls.AJ8PC}
+*************** TOTAL NODES IN CTG = 19 ************
+--------- EDGES IN CTG ------------
+0->{$r1 = new vasco.tests.VirtualCalls.AJ8PC=1, args := @parameter0: java.lang.String[]=0, $r0 = newarray (vasco.tests.VirtualCalls.InterfaceJ8PC1)[3]=0}
+1->{specialinvoke $r1.<vasco.tests.VirtualCalls.AJ8PC: void <init>()>()=1, $r0[0] = $r1=2}
+2->{$r2 = new vasco.tests.VirtualCalls.BJ8PC=3}
+3->{specialinvoke $r2.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()=3, $r0[1] = $r2=4}
+4->{$r3 = new vasco.tests.VirtualCalls.CJ8PC=5}
+5->{specialinvoke $r3.<vasco.tests.VirtualCalls.CJ8PC: void <init>()>()=5, $r0[2] = $r3=6}
+6->{p = p + 1=6, $r4 = new vasco.tests.VirtualCalls.BJ8PC=7, interfaceinvoke i1.<vasco.tests.VirtualCalls.InterfaceJ8PC1: void func()>()=6, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")=6, types = $r0=6, goto [?= (branch)]=6, if p <= 2 goto i1 = types[p]=6, i1 = types[p]=6, p = 0=6}
+7->{p#3 = $r4=8, specialinvoke $r4.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()=7}
+8->{$r5 = new vasco.tests.VirtualCalls.BJ8PC=11, if $i0 != 0 goto $r5 = new vasco.tests.VirtualCalls.BJ8PC=8, $i0 = a % 2=8, interfaceinvoke p#3.<vasco.tests.VirtualCalls.InterfaceJ8PC2: void method()>()=8, $r9 = new vasco.tests.VirtualCalls.AJ8PC=9, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(p#3, "vasco.tests.VirtualCalls.BJ8PC")=8, a = 4=8}
+9->{i1 = $r9=10, specialinvoke $r9.<vasco.tests.VirtualCalls.AJ8PC: void <init>()>()=9}
+10->{$r6 = new vasco.tests.VirtualCalls.CJ8PC=13, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")=10, goto [?= staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")]=10}
+11->{specialinvoke $r5.<vasco.tests.VirtualCalls.BJ8PC: void <init>()>()=11, i1 = $r5=12}
+12->{$r6 = new vasco.tests.VirtualCalls.CJ8PC=14, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>(i1, "vasco.tests.VirtualCalls.AJ8PC")=12}
+13->{specialinvoke $r6.<vasco.tests.VirtualCalls.CJ8PC: void <init>()>()=13, obj = $r6=15}
+14->{specialinvoke $r6.<vasco.tests.VirtualCalls.CJ8PC: void <init>()>()=14, obj = $r6=16}
+15->{obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f> = i1=17}
+16->{obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f> = i1=18}
+17->{return=17, interfaceinvoke $r7.<vasco.tests.VirtualCalls.InterfaceJ8PC1: void func()>()=17, $r7 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=17, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>($r8, "vasco.tests.VirtualCalls.AJ8PC")=17, $r8 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=17}
+18->{return=18, interfaceinvoke $r7.<vasco.tests.VirtualCalls.InterfaceJ8PC1: void func()>()=18, $r7 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=18, staticinvoke <vasco.tests.A: void RefToRelation(java.lang.Object,java.lang.Object)>($r8, "vasco.tests.VirtualCalls.AJ8PC")=18, $r8 = obj.<vasco.tests.VirtualCalls.CJ8PC: vasco.tests.VirtualCalls.InterfaceJ8PC1 f>=18}
+******* TOTAL EDGES IN CTG = 54**************
+---------------------------------------------------------------------------------------------
+Transforming Transforming jdk.internal.util.xml.BasicXmlPropertiesProvider... 
+Transforming jdk.net.SocketFlow... 
+Transforming vasco.tests.VirtualCalls.J8PC4... 
+jdk.net.ExtendedSocketOptions... 
+Transforming jdk.internal.util.xml.PropertiesDefaultHandler... 
+Transforming jdk.net.NetworkPermission... 
+Transforming jdk.internal.org.objectweb.asm.ClassWriter... 
+Transforming jdk.internal.org.objectweb.asm.MethodVisitor... 
+Transforming jdk.internal.org.objectweb.asm.AnnotationVisitor... 
+Transforming jdk.internal.org.objectweb.asm.Label... 
+Transforming jdk.net.SocketFlow$Status... 
+Transforming jdk.Exported... 
+Transforming jdk.net.ExtendedSocketOptions$ExtSocketOption... 
+Transforming jdk.internal.org.xml.sax.helpers.DefaultHandler... 
+Transforming jdk.internal.org.xml.sax.SAXException... 
+Transforming jdk.internal.org.xml.sax.Attributes... 
+Transforming jdk.internal.org.xml.sax.SAXParseException... 
+Transforming jdk.internal.org.xml.sax.InputSource... 
+Transforming jdk.internal.util.xml.impl.XMLStreamWriterImpl... 
+Transforming jdk.internal.org.xml.sax.Locator... 
+Transforming jdk.internal.util.xml.impl.SAXParserImpl... 
+Transforming jdk.internal.util.xml.SAXParser... 
+Transforming jdk.internal.util.xml.XMLStreamException... 
+Transforming jdk.internal.util.xml.XMLStreamWriter... 
+Transforming jdk.internal.org.objectweb.asm.ClassReader... 
+Transforming jdk.internal.org.objectweb.asm.ClassVisitor... 
+Transforming jdk.internal.org.objectweb.asm.ByteVector... 
+Transforming jdk.internal.org.objectweb.asm.Item... 
+Transforming jdk.internal.org.objectweb.asm.AnnotationWriter... 
+Transforming jdk.internal.org.objectweb.asm.Attribute... 
+Transforming jdk.internal.org.objectweb.asm.FieldWriter... 
+Transforming jdk.internal.org.objectweb.asm.MethodWriter... 
+Transforming jdk.internal.org.objectweb.asm.TypePath... 
+Transforming jdk.internal.org.objectweb.asm.FieldVisitor... 
+Transforming jdk.internal.org.objectweb.asm.Handle... 
+Transforming jdk.internal.org.objectweb.asm.Type... 
+Transforming jdk.internal.org.objectweb.asm.Frame... 
+Transforming jdk.internal.org.objectweb.asm.Edge... 
+Transforming jdk.internal.org.xml.sax.EntityResolver... 
+Transforming jdk.internal.org.xml.sax.DTDHandler... 
+Transforming jdk.internal.org.xml.sax.ContentHandler... 
+Transforming jdk.internal.org.xml.sax.ErrorHandler... 
+Transforming jdk.internal.util.xml.impl.XMLStreamWriterImpl$Element... 
+Transforming jdk.internal.util.xml.impl.XMLWriter... 
+Transforming jdk.internal.util.xml.impl.ParserSAX... 
+Transforming jdk.internal.org.objectweb.asm.Handler... 
+Transforming jdk.internal.org.xml.sax.XMLReader... 
+Transforming jdk.internal.org.objectweb.asm.Context... 
+Transforming jdk.internal.org.objectweb.asm.Opcodes... 
+Transforming jdk.internal.util.xml.impl.Parser... 
+Transforming jdk.internal.util.xml.impl.Pair... 
+Transforming jdk.internal.util.xml.impl.Attrs... 
+Transforming jdk.internal.util.xml.impl.Input... 
+Transforming jdk.internal.org.xml.sax.SAXNotRecognizedException... 
+Transforming jdk.internal.org.xml.sax.SAXNotSupportedException... 
+Transforming jdk.internal.util.xml.impl.ReaderUTF16... 
+Transforming jdk.internal.util.xml.impl.ReaderUTF8... 
+Transforming vasco.tests.VirtualCalls.AJ8PC... 
+Transforming vasco.tests.VirtualCalls.BJ8PC... 
+Transforming vasco.tests.VirtualCalls.CJ8PC... 
+Transforming vasco.tests.A... 
+Transforming vasco.tests.VirtualCalls.InterfaceJ8PC2... 
+Transforming vasco.tests.VirtualCalls.InterfaceJ8PC1... 
+Transforming vasco.tests.B... 
+Transforming vasco.tests.C... 
+Soot finished on Sun Jun 16 23:12:51 IST 2019
+Soot has run for 0 min. 29 sec.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.642s
+[INFO] Finished at: Sun Jun 16 23:12:51 IST 2019
+[INFO] Final Memory: 104M/339M
+[INFO] ------------------------------------------------------------------------

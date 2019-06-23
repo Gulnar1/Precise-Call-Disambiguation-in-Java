@@ -24,15 +24,21 @@ public class ContextTransitionGraph {
 				links.put(s, mp);
 	  }
 	  public void printCTG(){
-		  System.out.println("---------NODES IN CTG------------");
+		  int node =0, edges = 0;
+		  System.out.println("--------- NODES IN CTG ------------");
 		  for(Map<Value, RefType> mp : nodes.keySet()){
 			  int i = nodes.get(mp);
 			  System.out.println(i + "->" + mp);
+			  node ++;
 		  }
-		  System.out.println("---------LINKS IN CTG------------");
+		  System.out.println("*************** TOTAL NODES IN CTG = " + node + " ************");
+		  System.out.println("--------- EDGES IN CTG ------------");
+		  
 		  for(int state : links.keySet()){
 			  Map<Unit,Integer> l = links.get(state);
 			  System.out.println(state + "->" + l);
+			  edges = edges + l.size();
 		  }
+		  System.out.println("******* TOTAL EDGES IN CTG = " + edges + "**************");
 	  }
 }

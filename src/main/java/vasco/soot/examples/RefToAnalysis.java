@@ -20,12 +20,16 @@ import soot.IntType;
 import soot.Value;
 import soot.ValueBox;
 import soot.jimple.AnyNewExpr;
+import soot.jimple.ArrayRef;
 import soot.jimple.AssignStmt;
+import soot.jimple.CastExpr;
 import soot.jimple.DefinitionStmt;
+import soot.jimple.Expr;
 import soot.jimple.FieldRef;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.NewArrayExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.ReturnStmt;
 import soot.jimple.StaticFieldRef;
@@ -42,11 +46,12 @@ import vasco.ForwardInterProceduralAnalysis;
 
   public class RefToAnalysis extends InterProceduralAnalysis< SootMethod, Unit, Set<Map<Value, RefType>> > {
   private static final Local RETURN_LOCAL = new JimpleLocal("@return", IntType.v()); 
-  //public ContextTransitionGraph CTG;
+  public int statements;
  
   public RefToAnalysis() {
 	  super(false);
 	  verbose = false;
+	  statements = 0;
   }
 
 public Set<Map<Value, RefType>> normalFlowFunction(
@@ -62,16 +67,20 @@ public Set<Map<Value, RefType>> normalFlowFunction(
         outValue.add(mp);
 	}
 	if (node instanceof DefinitionStmt) {
+		//System.out.print(node + " -> DefinitionStmt :");
+		
 			  DefinitionStmt ds = (DefinitionStmt) node;
 		        Value lhs = ds.getLeftOp();
 		        Value rhs = ds.getRightOp();
+		        //System.out.println(" Type = " + rhs.getType());
 		            if (rhs instanceof NewExpr) {
-		            	//System.out.print(" New Expression : ");
-		            	RefType rf = ((NewExpr) rhs).getBaseType();
+		            	//System.out.print(" AnyNew Expression : ");
+		            	RefType rf;
+		            	//if(rhs instanceof NewExpr)
+		            		rf = (RefType) rhs.getType();
+		            			            	
 		            	if(outValue.isEmpty()){
-		            		if(verbose){
-		            			//System.out.print(" outvalue empty!");
-		            		}
+		            		
 		            		Map<Value,RefType> hm = new HashMap<Value,RefType>();
 		            		hm.put(lhs,rf);
 		            		outValue.add(hm);
@@ -83,8 +92,11 @@ public Set<Map<Value, RefType>> normalFlowFunction(
 		            		}	
 		            	}
 		            }
-		            else{
-		            	//System.out.print(" Assignment Statement!");
+		            
+		            else {
+		            	if(rhs instanceof CastExpr)
+		            		rhs = ((CastExpr) rhs).getOp() ;
+		            	//System.out.print(" Assignment Statement ");
 		            	for(Map<Value,RefType> hm : outValue){
 		        			if(hm.get(rhs) != null){
 		        				hm.put(lhs, hm.get(rhs));
@@ -178,7 +190,7 @@ public Set<Map<Value, RefType>> callExitFlowFunction(
 public Set<Map<Value, RefType>> callLocalFlowFunction(
 		Context<SootMethod, Unit, Set<Map<Value, RefType>>> context,
 		Unit node, Set<Map<Value, RefType>> inValue) {
-	//System.out.println("CallLocalFlowFunction");
+	//System.out.println(node + " CallLocalFlowFunction");
 	Set<Map<Value, RefType>> afterCallValue = new HashSet<Map<Value, RefType>>();
 	afterCallValue.addAll(inValue);
 	return afterCallValue;
@@ -260,6 +272,7 @@ public void doAnalysis() {
 		Unit node = currentContext.getWorkList().pollFirst();
 
 		if (node != null) {
+			statements ++;
 			//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NODE : " +  node + "~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			// Compute the IN data flow value (only for non-entry units).
 			List<Unit> predecessors = currentContext.getControlFlowGraph().getPredsOf(node);
@@ -303,6 +316,7 @@ public void doAnalysis() {
 					if(targetMethod == m){
 						System.out.println();
 						System.out.println("	NODE -> " + node);
+						System.out.println("	IN VALUE -> " + in);
 						out = callEntryFlowFunction(currentContext, targetMethod, node, in);
 						break;
 					}

@@ -36,9 +36,11 @@ import vasco.ForwardInterProceduralAnalysis;
 
   public class RefAnalysis extends ForwardInterProceduralAnalysis< SootMethod, Unit, Set<Map<Value, RefType>> > {
   private static final Local RETURN_LOCAL = new JimpleLocal("@return", IntType.v()); 
+  //String classname;
   public RefAnalysis() {
 	  super();
 	  verbose = false;
+	  //classname = c;
   }
 @Override
 public Set<Map<Value, RefType>> normalFlowFunction(

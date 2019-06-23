@@ -45,7 +45,8 @@ public class RefToTest extends SceneTransformer{
 				System.out.println("OUT: " + format(out));
 				currentState = createCTG(in, out, CTG, unit, currentState);
 			}
-			System.out.println("----------------------CALLEE-CONTEXT TRANSITION  GRAPH-----------------------------");
+			System.out.println("Total no. of statements processed = " + analysis.statements);
+			System.out.println("*****************************CALLEE-CONTEXT TRANSITION  GRAPH*****************************");
 			CTG.printCTG();	
 			System.out.println("---------------------------------------------------------------------------------------------");
 	}
